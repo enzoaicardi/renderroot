@@ -1,0 +1,56 @@
+{
+    "name": "@enzoaicardi/renderroot",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "A fast way to render dom components without compilation",
+    "homepage": "https://github.com/enzoaicardi/renderroot",
+    "bugs": "https://github.com/enzoaicardi/renderroot/issues",
+    "author": {
+        "name": "Enzo Aicardi",
+        "url": "https://enzo.aicardi.pro"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enzoaicardi/renderroot"
+    },
+    "main": "./esm/renderroot.js",
+    "module": "./esm/renderroot.js",
+    "browser": "./esm/renderroot.js",
+    "types": "./index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./index.d.ts",
+            "require": "./cjs/renderroot.cjs",
+            "import": "./esm/renderroot.js",
+            "browser": "./esm/renderroot.js",
+            "default": "./esm/renderroot.js"
+        },
+        "./esm": {
+            "types": "./index.d.ts",
+            "default": "./esm/renderroot.js"
+        },
+        "./cjs": {
+            "types": "./index.d.ts",
+            "default": "./cjs/renderroot.cjs"
+        },
+        "./umd": {
+            "types": "./index.d.ts",
+            "default": "./umd/renderroot.js"
+        },
+        "./iife": {
+            "types": "./index.d.ts",
+            "default": "./iife/renderroot.js"
+        }
+    },
+    "keywords": [
+        "javascript",
+        "render",
+        "root",
+        "dom",
+        "context"
+    ],
+    "scripts": {
+        "test": "echo \"No test specified\""
+    },
+    "license": "GPL-3.0-only"
+}
