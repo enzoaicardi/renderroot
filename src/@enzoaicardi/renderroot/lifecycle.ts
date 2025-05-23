@@ -3,6 +3,7 @@ import { Root } from "./root";
 
 export type LifeCycleCallback = (customElement: RenderRoot) => void;
 
+/** Hook to bind functions to the customElement lifecycle */
 export function useLifeCycle() {
     const connected = lifeCycleProvider(Root.current.constructorCallbacks);
     const disconnected = lifeCycleProvider(Root.current.disconnectedCallbacks);

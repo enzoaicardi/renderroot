@@ -8,6 +8,7 @@ export class Root {
     disconnectedCallbacks: Array<LifeCycleCallback>[] = [];
 }
 
+/** Hook to retrieve current root instance */
 export function useRoot() {
     return Root.current;
 }

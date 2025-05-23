@@ -26,6 +26,7 @@ export default formats.map(function (format) {
                 mangle: {
                     properties: {
                         reserved: [
+                            "current",
                             "contexts",
                             "constructorCallbacks",
                             "disconnectedCallbacks",

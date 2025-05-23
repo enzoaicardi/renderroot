@@ -1,6 +1,12 @@
 import { Root } from "./root";
-import { type RenderCallback } from "./types";
 
+export type RenderCallback<Arguments extends unknown[]> = (
+    ...args: Arguments
+) => string;
+
+export type NullaryRenderCallback = () => string;
+
+/** Function to create a rendering root in string format */
 export function renderRoot<Arguments extends unknown[]>(
     callback: RenderCallback<Arguments>
 ) {

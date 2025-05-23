@@ -1,9 +1,10 @@
+import { type NullaryRenderCallback } from "./render";
 import { RenderRoot } from "./element";
 import { Root } from "./root";
-import { type NullaryRenderCallback } from "./types";
 
 const container = document.createElement("div");
 
+/** Function to create a rendering context and for linking to customElements */
 export function createRoot(
     callback: NullaryRenderCallback,
     root?: Root
