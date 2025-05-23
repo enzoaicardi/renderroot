@@ -14,13 +14,21 @@ This package is currently in **BETA**. It's being considered as a replacement fo
 
 # List of all exports
 
--   [x] [Signal](https://github.com/enzoaicardi/renderroot/tree/main/wiki/classes/signal.md)
--   [x] [Reactive](https://github.com/enzoaicardi/renderroot/tree/main/wiki/classes/reactive.md)
+-   [x] useRoot,
+-   [x] useContext,
+-   [x] useLifeCycle,
+-   [x] createRoot,
+-   [x] createContext,
+-   [x] renderRoot,
 
 ```js
 import {
-    Signal, // used to create a signal
-    Reactive, // used to create a reactive function
+    useRoot,
+    useContext,
+    useLifeCycle,
+    createRoot,
+    createContext,
+    renderRoot,
 } from "@enzoaicardi/renderroot"; // cdn at https://cdn.jsdelivr.net/npm/@enzoaicardi/renderroot@latest/esm/renderroot.js
 ```
 
@@ -33,8 +41,22 @@ npm install @enzoaicardi/renderroot
 ```
 
 ```js
-import { Signal, Reactive } from "@enzoaicardi/renderroot"; // es modules
-const { Signal, Reactive } = require("@enzoaicardi/renderroot"); // commonjs modules
+import {
+    useRoot,
+    useContext,
+    useLifeCycle,
+    createRoot,
+    createContext,
+    renderRoot,
+} from "@enzoaicardi/renderroot"; // es modules
+const {
+    useRoot,
+    useContext,
+    useLifeCycle,
+    createRoot,
+    createContext,
+    renderRoot,
+} = require("@enzoaicardi/renderroot"); // commonjs modules
 ```
 
 ## CDN import
@@ -42,8 +64,12 @@ const { Signal, Reactive } = require("@enzoaicardi/renderroot"); // commonjs mod
 ```js
 // es modules
 import {
-    Signal,
-    Reactive,
+    useRoot,
+    useContext,
+    useLifeCycle,
+    createRoot,
+    createContext,
+    renderRoot,
 } from "https://cdn.jsdelivr.net/npm/@enzoaicardi/renderroot@latest/esm/renderroot.js";
 ```
 
@@ -52,6 +78,13 @@ import {
 <script src="https://cdn.jsdelivr.net/npm/@enzoaicardi/renderroot@latest/iife/renderroot.js"></script>
 <script>
     // global object destructuration
-    const { Signal, Reactive } = Renderroot;
+    const {
+        useRoot,
+        useContext,
+        useLifeCycle,
+        createRoot,
+        createContext,
+        renderRoot,
+    } = renderroot;
 </script>
 ```
