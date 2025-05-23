@@ -14,12 +14,12 @@ This package is currently in **BETA**. It's being considered as a replacement fo
 
 # List of all exports
 
--   [x] useRoot,
--   [x] useContext,
--   [x] useLifeCycle,
--   [x] createRoot,
--   [x] createContext,
--   [x] renderRoot,
+-   [x] useRoot
+-   [x] useContext
+-   [x] useLifeCycle
+-   [x] createRoot
+-   [x] createContext
+-   [x] renderRoot
 
 ```js
 import {
@@ -79,12 +79,12 @@ import {
 <script>
     // global object destructuration
     const {
-        useRoot,
-        useContext,
-        useLifeCycle,
-        createRoot,
-        createContext,
-        renderRoot,
+        useRoot
+        useContext
+        useLifeCycle
+        createRoot
+        createContext
+        renderRoot
     } = renderroot;
 </script>
 ```
