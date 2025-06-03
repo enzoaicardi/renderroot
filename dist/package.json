@@ -1,7 +1,7 @@
 {
     "name": "@enzoaicardi/renderroot",
     "type": "module",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "A fast way to render dom components without compilation",
     "homepage": "https://github.com/enzoaicardi/renderroot",
     "bugs": "https://github.com/enzoaicardi/renderroot/issues",

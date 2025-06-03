@@ -2,7 +2,7 @@ import { type NullaryRenderCallback } from "./render";
 import { createRoot } from "./create";
 import { Root } from "./root";
 
-/** Hook to to create a root that inherits the current context */
+/** Hook to create a root that inherits the current context */
 export function useInnerRoot() {
     const contexts = new Map(Root.current.contexts);
 
