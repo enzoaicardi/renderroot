@@ -7,6 +7,7 @@ _A fast way to render dom components without compilation_
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/@enzoaicardi/renderroot?style=for-the-badge)](https://www.npmjs.com/package/@enzoaicardi/renderroot)
 [![JSDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@enzoaicardi/renderroot?style=for-the-badge)](https://www.jsdelivr.com/package/npm/@enzoaicardi/renderroot)
 [![Wiki](https://img.shields.io/badge/Wiki-Documentation-blue?style=for-the-badge)](https://github.com/enzoaicardi/renderroot/tree/main/wiki/README.md)
+[![Codepen](https://img.shields.io/badge/Demos-codepen.io-seagreen?style=for-the-badge)](https://codepen.io/collection/adverM)
 
 # /!\ Important
 
@@ -17,6 +18,7 @@ This package is currently in **BETA**. It's being considered as a replacement fo
 -   [x] useRoot
 -   [x] useContext
 -   [x] useLifeCycle
+-   [x] useInnerRoot
 -   [x] createRoot
 -   [x] createContext
 -   [x] renderRoot
@@ -26,6 +28,7 @@ import {
     useRoot,
     useContext,
     useLifeCycle,
+    useInnerRoot,
     createRoot,
     createContext,
     renderRoot,
@@ -45,6 +48,7 @@ import {
     useRoot,
     useContext,
     useLifeCycle,
+    useInnerRoot,
     createRoot,
     createContext,
     renderRoot,
@@ -53,6 +57,7 @@ const {
     useRoot,
     useContext,
     useLifeCycle,
+    useInnerRoot,
     createRoot,
     createContext,
     renderRoot,
@@ -67,6 +72,7 @@ import {
     useRoot,
     useContext,
     useLifeCycle,
+    useInnerRoot,
     createRoot,
     createContext,
     renderRoot,
@@ -79,12 +85,13 @@ import {
 <script>
     // global object destructuration
     const {
-        useRoot
-        useContext
-        useLifeCycle
-        createRoot
-        createContext
-        renderRoot
+        useRoot,
+        useContext,
+        useLifeCycle,
+        useInnerRoot,
+        createRoot,
+        createContext,
+        renderRoot,
     } = renderroot;
 </script>
 ```
