@@ -1,11 +1,11 @@
 import { type ContextProvider } from "./context";
-import { type LifeCycleCallback } from "./lifecycle";
+import { type LifeCycleArray } from "./lifecycle";
 
 export class Root {
     static current: Root = new Root();
     contexts = new Map<ContextProvider<unknown>, unknown>();
-    constructorCallbacks: Array<LifeCycleCallback>[] = [];
-    disconnectedCallbacks: Array<LifeCycleCallback>[] = [];
+    constructorCallbacks: LifeCycleArray[] = [];
+    disconnectedCallbacks: LifeCycleArray[] = [];
 }
 
 /** Hook to retrieve current root instance */

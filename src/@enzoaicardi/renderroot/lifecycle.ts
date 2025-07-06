@@ -2,6 +2,7 @@ import { RenderRoot } from "./element";
 import { Root } from "./root";
 
 export type LifeCycleCallback = (customElement: RenderRoot) => void;
+export type LifeCycleArray = LifeCycleCallback[];
 
 /** Hook to bind functions to the customElement lifecycle */
 export function useLifeCycle() {
@@ -11,12 +12,12 @@ export function useLifeCycle() {
     return [connected, disconnected];
 }
 
-function lifeCycleProvider(array: Array<LifeCycleCallback>[]) {
+function lifeCycleProvider(array: LifeCycleArray[]) {
     return (callback: LifeCycleCallback) => {
-        const lastArray = array[array.length - 1];
+        const lifeCycleArray = array[array.length - 1];
 
-        if (lastArray) {
-            lastArray.push(callback);
+        if (lifeCycleArray) {
+            lifeCycleArray.push(callback);
         }
     };
 }

@@ -2,7 +2,7 @@ import { type NullaryRenderCallback } from "./render";
 import { RenderRoot } from "./element";
 import { Root } from "./root";
 
-const container = document.createElement("div");
+const containerTemplate = document.createElement("div");
 
 /** Function to create a rendering context and for linking to customElements */
 export function createRoot(
@@ -13,6 +13,7 @@ export function createRoot(
     Root.current = root || new Root();
 
     const render = callback();
+    const container = containerTemplate.cloneNode() as typeof containerTemplate;
     container.innerHTML = render;
 
     Root.current = initial;

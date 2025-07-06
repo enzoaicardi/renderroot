@@ -17,19 +17,20 @@ declare class RenderRoot extends HTMLElement {
 	constructor();
 }
 export type LifeCycleCallback = (customElement: RenderRoot) => void;
+export type LifeCycleArray = LifeCycleCallback[];
 /** Hook to bind functions to the customElement lifecycle */
 export declare function useLifeCycle(): ((callback: LifeCycleCallback) => void)[];
 declare class Root {
 	static current: Root;
 	contexts: Map<ContextProvider<unknown>, unknown>;
-	constructorCallbacks: Array<LifeCycleCallback>[];
-	disconnectedCallbacks: Array<LifeCycleCallback>[];
+	constructorCallbacks: LifeCycleArray[];
+	disconnectedCallbacks: LifeCycleArray[];
 }
 /** Hook to retrieve current root instance */
 export declare function useRoot(): Root;
 /** Function to create a rendering context and for linking to customElements */
 export declare function createRoot(callback: NullaryRenderCallback, root?: Root): Element;
-/** Hook to to create a root that inherits the current context */
+/** Hook to create a root that inherits the current context */
 export declare function useInnerRoot(): (callback: NullaryRenderCallback) => Element;
 
 export {};
