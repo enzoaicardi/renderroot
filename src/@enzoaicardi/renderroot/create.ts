@@ -5,10 +5,10 @@ import { Root } from "./root";
 const containerTemplate = document.createElement("div");
 
 /** Function to create a rendering context and for linking to customElements */
-export function createRoot(
+export function createRoot<T extends Element>(
     callback: NullaryRenderCallback,
     root?: Root
-): Element {
+): T {
     const initial = Root.current;
     Root.current = root || new Root();
 
@@ -17,7 +17,7 @@ export function createRoot(
     container.innerHTML = render;
 
     Root.current = initial;
-    return container.firstElementChild!;
+    return container.firstElementChild! as T;
 }
 
 customElements.define("render-root", RenderRoot);

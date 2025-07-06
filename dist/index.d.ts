@@ -29,8 +29,8 @@ declare class Root {
 /** Hook to retrieve current root instance */
 export declare function useRoot(): Root;
 /** Function to create a rendering context and for linking to customElements */
-export declare function createRoot(callback: NullaryRenderCallback, root?: Root): Element;
+export declare function createRoot<T extends Element>(callback: NullaryRenderCallback, root?: Root): T;
 /** Hook to create a root that inherits the current context */
-export declare function useInnerRoot(): (callback: NullaryRenderCallback) => Element;
+export declare function useInnerRoot(): <T extends Element>(callback: NullaryRenderCallback) => T;
 
 export {};

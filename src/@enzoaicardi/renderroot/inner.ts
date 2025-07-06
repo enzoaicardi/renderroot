@@ -6,9 +6,9 @@ import { Root } from "./root";
 export function useInnerRoot() {
     const contexts = new Map(Root.current.contexts);
 
-    return (callback: NullaryRenderCallback): Element => {
+    return <T extends Element>(callback: NullaryRenderCallback): T => {
         const root = new Root();
         root.contexts = new Map(contexts);
-        return createRoot(callback, root);
+        return createRoot<T>(callback, root);
     };
 }
