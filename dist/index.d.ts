@@ -2,15 +2,15 @@
 
 export type RenderCallback<Arguments extends unknown[]> = (...args: Arguments) => string;
 export type NullaryRenderCallback = () => string;
-/** Function to create a rendering root in string format */
+/** Function used to create a rendering root in string format */
 export declare function renderRoot<Arguments extends unknown[]>(callback: RenderCallback<Arguments>): (...args: Parameters<typeof callback>) => ReturnType<typeof callback>;
-/** Function to instantiate a context with a given value */
+/** Function used to instantiate a context with a given value */
 export interface ContextProvider<Type> {
 	(value: Type, callback: NullaryRenderCallback): string;
 }
-/** Function to create a context provider */
+/** Function used to create a context provider */
 export declare function createContext<Type>(): ContextProvider<Type>;
-/** Hook to retrieve the value of a context based on its provider  */
+/** Hook used to retrieve the value of a context based on its provider  */
 export declare function useContext<Type>(provider: ContextProvider<Type>): Type;
 declare class RenderRoot extends HTMLElement {
 	disconnectedCallback: () => void;
@@ -18,19 +18,22 @@ declare class RenderRoot extends HTMLElement {
 }
 export type LifeCycleCallback = (customElement: RenderRoot) => void;
 export type LifeCycleArray = LifeCycleCallback[];
-/** Hook to bind functions to the customElement lifecycle */
-export declare function useLifeCycle(): ((callback: LifeCycleCallback) => void)[];
+/** Hook used to bind functions to the customElement lifecycle */
+export declare function useLifeCycle(): {
+	connected: (callback: LifeCycleCallback) => void;
+	disconnected: (callback: LifeCycleCallback) => void;
+};
 declare class Root {
 	static current: Root;
 	contexts: Map<ContextProvider<unknown>, unknown>;
 	constructorCallbacks: LifeCycleArray[];
 	disconnectedCallbacks: LifeCycleArray[];
 }
-/** Hook to retrieve current root instance */
+/** Hook used to retrieve current root instance */
 export declare function useRoot(): Root;
-/** Function to create a rendering context and for linking to customElements */
-export declare function createRoot<T extends Element>(callback: NullaryRenderCallback, root?: Root): T;
-/** Hook to create a root that inherits the current context */
-export declare function useInnerRoot(): <T extends Element>(callback: NullaryRenderCallback) => T;
+/** Function used to create a rendering context */
+export declare function createRoot(callback: NullaryRenderCallback, root?: Root): HTMLCollection;
+/** Hook used to create a root that inherits the current context */
+export declare function useInnerRoot(): (callback: NullaryRenderCallback) => HTMLCollection;
 
 export {};

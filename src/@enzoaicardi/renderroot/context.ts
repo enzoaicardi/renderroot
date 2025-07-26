@@ -1,12 +1,12 @@
 import { type NullaryRenderCallback } from "./render";
 import { Root } from "./root";
 
-/** Function to instantiate a context with a given value */
+/** Function used to instantiate a context with a given value */
 export interface ContextProvider<Type> {
     (value: Type, callback: NullaryRenderCallback): string;
 }
 
-/** Function to create a context provider */
+/** Function used to create a context provider */
 export function createContext<Type>() {
     const provider: ContextProvider<Type> = (
         value: Type,
@@ -25,7 +25,7 @@ export function createContext<Type>() {
     return provider;
 }
 
-/** Hook to retrieve the value of a context based on its provider  */
+/** Hook used to retrieve the value of a context based on its provider  */
 export function useContext<Type>(provider: ContextProvider<Type>) {
     return Root.current.contexts.get(
         provider as ContextProvider<unknown>

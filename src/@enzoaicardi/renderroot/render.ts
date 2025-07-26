@@ -6,7 +6,7 @@ export type RenderCallback<Arguments extends unknown[]> = (
 
 export type NullaryRenderCallback = () => string;
 
-/** Function to create a rendering root in string format */
+/** Function used to create a rendering root in string format */
 export function renderRoot<Arguments extends unknown[]>(
     callback: RenderCallback<Arguments>
 ) {

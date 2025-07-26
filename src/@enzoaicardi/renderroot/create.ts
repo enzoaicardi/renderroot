@@ -4,11 +4,11 @@ import { Root } from "./root";
 
 const containerTemplate = document.createElement("div");
 
-/** Function to create a rendering context and for linking to customElements */
-export function createRoot<T extends Element>(
+/** Function used to create a rendering context */
+export function createRoot(
     callback: NullaryRenderCallback,
     root?: Root
-): T {
+): HTMLCollection {
     const initial = Root.current;
     Root.current = root || new Root();
 
@@ -17,7 +17,7 @@ export function createRoot<T extends Element>(
     container.innerHTML = render;
 
     Root.current = initial;
-    return container.firstElementChild! as T;
+    return container.children;
 }
 
 customElements.define("render-root", RenderRoot);
