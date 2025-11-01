@@ -9,9 +9,9 @@ _A fast way to render dom components without compilation_
 [![Wiki](https://img.shields.io/badge/Wiki-Documentation-blue?style=for-the-badge)](https://github.com/enzoaicardi/renderroot/tree/main/wiki/README.md)
 [![Codepen](https://img.shields.io/badge/Demos-codepen.io-seagreen?style=for-the-badge)](https://codepen.io/collection/adverM)
 
-# /!\ Important
+# What is renderRoot ?
 
-This package is currently in **BETA**. It's being considered as a replacement for webcomponents, which has too low a performance and too high a complexity to match instances with real components.
+renderRoot is a javascript micro-library (written in typescript) of less than `1kb` which allows you to render DOM in javascript, like React, Vue, etc...
 
 # List of all exports
 

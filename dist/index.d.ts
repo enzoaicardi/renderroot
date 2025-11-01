@@ -13,8 +13,10 @@ export declare function createContext<Type>(): ContextProvider<Type>;
 /** Hook used to retrieve the value of a context based on its provider  */
 export declare function useContext<Type>(provider: ContextProvider<Type>): Type;
 declare class RenderRoot extends HTMLElement {
-	disconnectedCallback: () => void;
+	constructorCallbacks: LifeCycleArray | undefined;
+	disconnectedCallbacks: LifeCycleArray | undefined;
 	constructor();
+	disconnectedCallback(): void;
 }
 export type LifeCycleCallback = (customElement: RenderRoot) => void;
 export type LifeCycleArray = LifeCycleCallback[];
