@@ -13,12 +13,13 @@ export function createContext<Type>() {
         callback: NullaryRenderCallback
     ) => {
         const key = provider as ContextProvider<unknown>;
-        const initial = Root.current.contexts.get(key);
-        Root.current.contexts.set(key, value);
+        const contexts = Root.current.contexts;
+        const initial = contexts.get(key);
+        contexts.set(key, value);
 
         const render = callback();
 
-        Root.current.contexts.set(key, initial);
+        contexts.set(key, initial);
         return render;
     };
 

@@ -3,8 +3,10 @@ import { type LifeCycleArray } from "./lifecycle";
 
 export class Root {
     static current: Root = new Root();
+
     contexts = new Map<ContextProvider<unknown>, unknown>();
-    constructorCallbacks: LifeCycleArray[] = [];
+    createdCallbacks: LifeCycleArray[] = [];
+    connectedCallbacks: LifeCycleArray[] = [];
     disconnectedCallbacks: LifeCycleArray[] = [];
 }
 

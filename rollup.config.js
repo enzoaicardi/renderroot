@@ -28,8 +28,10 @@ export default formats.map(function (format) {
                         reserved: [
                             "current",
                             "contexts",
-                            "constructorCallbacks",
+                            "createdCallbacks",
+                            "connectedCallbacks",
                             "disconnectedCallbacks",
+                            "created",
                             "connected",
                             "disconnected",
                             "provider",

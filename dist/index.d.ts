@@ -12,23 +12,30 @@ export interface ContextProvider<Type> {
 export declare function createContext<Type>(): ContextProvider<Type>;
 /** Hook used to retrieve the value of a context based on its provider  */
 export declare function useContext<Type>(provider: ContextProvider<Type>): Type;
+declare const isConnected: unique symbol;
 declare class RenderRoot extends HTMLElement {
-	constructorCallbacks: LifeCycleArray | undefined;
-	disconnectedCallbacks: LifeCycleArray | undefined;
+	[isConnected]: boolean;
+	createdArray: LifeCycleArray | undefined;
+	connectedArray: LifeCycleArray | undefined;
+	disconnectedArray: LifeCycleArray | undefined;
 	constructor();
+	connectedCallback(): void;
 	disconnectedCallback(): void;
+	adoptedCallback(): void;
 }
 export type LifeCycleCallback = (customElement: RenderRoot) => void;
 export type LifeCycleArray = LifeCycleCallback[];
 /** Hook used to bind functions to the customElement lifecycle */
 export declare function useLifeCycle(): {
+	created: (callback: LifeCycleCallback) => void;
 	connected: (callback: LifeCycleCallback) => void;
 	disconnected: (callback: LifeCycleCallback) => void;
 };
 declare class Root {
 	static current: Root;
 	contexts: Map<ContextProvider<unknown>, unknown>;
-	constructorCallbacks: LifeCycleArray[];
+	createdCallbacks: LifeCycleArray[];
+	connectedCallbacks: LifeCycleArray[];
 	disconnectedCallbacks: LifeCycleArray[];
 }
 /** Hook used to retrieve current root instance */

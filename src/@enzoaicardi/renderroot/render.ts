@@ -13,8 +13,11 @@ export function renderRoot<Arguments extends unknown[]>(
     return (
         ...args: Parameters<typeof callback>
     ): ReturnType<typeof callback> => {
-        Root.current.constructorCallbacks.push([]);
-        Root.current.disconnectedCallbacks.push([]);
+        const root = Root.current;
+
+        root.createdCallbacks.push([]);
+        root.connectedCallbacks.push([]);
+        root.disconnectedCallbacks.push([]);
 
         return "<render-root>" + callback(...args) + "</render-root>";
     };
