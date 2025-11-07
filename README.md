@@ -1,6 +1,6 @@
 # renderroot
 
-_A fast way to render dom components without compilation_
+_**renderRoot** is a tiny JavaScript micro-library (written in **TypeScript**) under `1kb` that enables DOM rendering in JavaScript, similar to **React**, **Vue**, etc., but with a much lower level of abstraction._
 
 [![NPM Version](https://img.shields.io/npm/v/@enzoaicardi/renderroot.svg?style=for-the-badge)](https://www.npmjs.com/package/@enzoaicardi/renderroot)
 [![NPM Downloads](https://img.shields.io/npm/dm/@enzoaicardi/renderroot.svg?style=for-the-badge)](https://www.npmjs.com/package/@enzoaicardi/renderroot)
