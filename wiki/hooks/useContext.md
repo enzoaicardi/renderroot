@@ -12,7 +12,10 @@ const settings = createContext<{ mode: "dark" | "light" }>();
 function App() {
     return settings(
         { mode: "dark" },
-        () => /* HTML */ ` ${Title("My App")} ${Description("this is my app")} `
+        () => /* HTML */ `
+            ${Title("My App")}
+            ${Description("this is my app")}
+        `
     );
 }
 
@@ -31,26 +34,26 @@ Here’s what we would have had to do without using contexts:
 
 ```ts
 type Settings = {
-	mode: "dark" | "light"
-}
+    mode: "dark" | "light";
+};
 
-function App(){
-	const settings: Settings = { mode: "dark" };
+function App() {
+    const settings: Settings = { mode: "dark" };
 
-	return /* HTML */`
-		${Title("My App", settings)}
-		${Description("this is my app", settings)}
-	`)
+    return /* HTML */ `
+        ${Title("My App", settings)}
+        ${Description("this is my app", settings)}
+    `;
 }
 
 const Title = renderRoot((content: string, settings: Settings) => {
-	const { mode } = settings;
-	return /* HTML */`<h1>(${mode}) ${content}</h1>`;
+    const { mode } = settings;
+    return /* HTML */ `<h1>(${mode}) ${content}</h1>`;
 });
 
 const Description = renderRoot((content: string, settings: Settings) => {
-	const { mode } = settings;
-	return /* HTML */`<p>(${mode}) ${content}</p>`;
+    const { mode } = settings;
+    return /* HTML */ `<p>(${mode}) ${content}</p>`;
 });
 ```
 

@@ -19,7 +19,10 @@ With just this, it’s already possible to create an application and split it in
 
 ```ts
 function App() {
-    return /* HTML */ ` ${Title("My App")} ${Description("this is my app")} `;
+    return /* HTML */ `
+        ${Title("My App")}
+        ${Description("this is my app")}
+    `;
 }
 
 function Title(content: string) {

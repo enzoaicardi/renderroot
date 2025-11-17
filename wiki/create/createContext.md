@@ -11,7 +11,10 @@ function App() {
     // send the settings context value to all sub-functions
     return settings(
         { mode: "dark" },
-        () => /* HTML */ ` ${Title("My App")} ${Description("this is my app")} `
+        () => /* HTML */ `
+            ${Title("My App")}
+            ${Description("this is my app")}
+        `
     );
 }
 
@@ -39,7 +42,7 @@ function App(){
 	return /* HTML */`
 		${Title("My App", settings)}
 		${Description("this is my app", settings)}
-	`)
+	`;
 }
 
 const Title = renderRoot((content: string, settings: Settings) => {
