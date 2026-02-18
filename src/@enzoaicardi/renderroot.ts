@@ -1,4 +1,8 @@
-import { createContext, useContext } from "./renderroot/context";
+import {
+    createContext,
+    useContext,
+    useNonNullableContext,
+} from "./renderroot/context";
 import { createRoot } from "./renderroot/create";
 import { useInnerRoot } from "./renderroot/inner";
 import { useLifeCycle } from "./renderroot/lifecycle";
@@ -8,6 +12,7 @@ import { useRoot } from "./renderroot/root";
 export {
     useRoot,
     useContext,
+    useNonNullableContext,
     useLifeCycle,
     useInnerRoot,
     createRoot,

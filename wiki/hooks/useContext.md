@@ -2,6 +2,8 @@
 
 `useContext()` is a [hook](./hook.md) that retrieves the value of a context created with [`createContext`](../createContext) and provided through a [context provider](../create/createContext.md).
 
+`useNonNullableContext()` is similar to `useContext()` but it also guarantees that the value is not `null` or `undefined`.
+
 Contexts are useful when you want to access a value anywhere within the tree of child elements without explicitly passing that value through every component.
 
 Here’s an example where the application settings are passed as a context to all child components:
@@ -20,12 +22,12 @@ function App() {
 }
 
 const Title = renderRoot((content: string) => {
-    const { mode } = useContext(settings);
+    const { mode } = useNonNullableContext(settings);
     return /* HTML */ `<h1>(${mode}) ${content}</h1>`;
 });
 
 const Description = renderRoot((content: string) => {
-    const { mode } = useContext(settings);
+    const { mode } = useNonNullableContext(settings);
     return /* HTML */ `<p>(${mode}) ${content}</p>`;
 });
 ```

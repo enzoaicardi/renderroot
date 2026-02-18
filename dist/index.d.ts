@@ -10,8 +10,13 @@ export interface ContextProvider<Type> {
 }
 /** Function used to create a context provider */
 export declare function createContext<Type>(): ContextProvider<Type>;
-/** Hook used to retrieve the value of a context based on its provider  */
-export declare function useContext<Type>(provider: ContextProvider<Type>): Type;
+/** Hook used to retrieve the value of a context based on its provider */
+export declare function useContext<Type>(provider: ContextProvider<Type>): Type | undefined;
+/**
+ * Hook used to retrieve the value of a context based on its provider,
+ * throw an error if the value is `null` or `undefined`
+ */
+export declare function useNonNullableContext<Type>(provider: ContextProvider<Type>): Type;
 declare const isConnected: unique symbol;
 declare class RenderRoot extends HTMLElement {
 	[isConnected]: boolean;

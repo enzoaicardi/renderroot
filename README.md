@@ -15,18 +15,20 @@ renderRoot is a javascript micro-library (written in typescript) of less than `1
 
 # List of all exports
 
--   [x] useRoot
--   [x] useContext
--   [x] useLifeCycle
--   [x] useInnerRoot
--   [x] createRoot
--   [x] createContext
--   [x] renderRoot
+- [x] useRoot
+- [x] useContext
+- [x] useNonNullableContext
+- [x] useLifeCycle
+- [x] useInnerRoot
+- [x] createRoot
+- [x] createContext
+- [x] renderRoot
 
 ```js
 import {
     useRoot,
     useContext,
+    useNonNullableContext,
     useLifeCycle,
     useInnerRoot,
     createRoot,
@@ -47,6 +49,7 @@ npm install @enzoaicardi/renderroot
 import {
     useRoot,
     useContext,
+    useNonNullableContext,
     useLifeCycle,
     useInnerRoot,
     createRoot,
@@ -56,6 +59,7 @@ import {
 const {
     useRoot,
     useContext,
+    useNonNullableContext,
     useLifeCycle,
     useInnerRoot,
     createRoot,
@@ -71,6 +75,7 @@ const {
 import {
     useRoot,
     useContext,
+    useNonNullableContext,
     useLifeCycle,
     useInnerRoot,
     createRoot,
@@ -87,6 +92,7 @@ import {
     const {
         useRoot,
         useContext,
+        useNonNullableContext,
         useLifeCycle,
         useInnerRoot,
         createRoot,

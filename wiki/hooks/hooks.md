@@ -21,10 +21,11 @@ function MyComponent() {
 }
 ```
 
-The `renderroot` library includes three hooks by default:
+The `renderroot` library includes four hooks by default:
 
 -   [`useLifeCycle`](./useLifeCycle.md): allows interaction with a `<render-root>` component’s lifecycle.
 -   [`useContext`](./useContext.md): retrieves the value provided by a context.
+-   [`useNonNullableContext`](./useContext.md): similar to `useContext` but it also guarantees that the value is not `null` or `undefined`.
 -   [`useInnerRoot`](./useInnerRoot.md): creates an inner root context based on the current root context.
 
 ## Hooks using hooks

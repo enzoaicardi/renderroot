@@ -10,7 +10,7 @@ export interface ContextProvider<Type> {
 export function createContext<Type>() {
     const provider: ContextProvider<Type> = (
         value: Type,
-        callback: NullaryRenderCallback
+        callback: NullaryRenderCallback,
     ) => {
         const key = provider as ContextProvider<unknown>;
         const contexts = Root.current.contexts;
@@ -26,9 +26,21 @@ export function createContext<Type>() {
     return provider;
 }
 
-/** Hook used to retrieve the value of a context based on its provider  */
+/** Hook used to retrieve the value of a context based on its provider */
 export function useContext<Type>(provider: ContextProvider<Type>) {
-    return Root.current.contexts.get(
-        provider as ContextProvider<unknown>
-    ) as Type;
+    return Root.current.contexts.get(provider as ContextProvider<unknown>) as
+        | Type
+        | undefined;
+}
+
+/**
+ * Hook used to retrieve the value of a context based on its provider,
+ * throw an error if the value is `null` or `undefined`
+ */
+export function useNonNullableContext<Type>(provider: ContextProvider<Type>) {
+    const value = useContext<Type>(provider);
+    if (value == null) {
+        throw new Error("Missing context value");
+    }
+    return value;
 }

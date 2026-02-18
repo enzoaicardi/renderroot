@@ -29,13 +29,13 @@ const Main = renderRoot(() => {
 });
 
 const LazyComponent = renderRoot(() => {
-    const { mode } = useContext(settings);
+    const { mode } = useNonNullableContext(settings);
     return /* HTML */ `<p>(${mode}) My Lazy Component</p>`;
 });
 ```
 
 To preserve access to the `settings` context, we use `useInnerRoot()`.
-If we had used `createRoot()` instead, we would have encountered an error in `LazyComponent`, indicating that `{ mode }` does not exist because `useContext(settings)` would be `undefined`.
+If we had used `createRoot()` instead, we would have encountered an error in `LazyComponent`, indicating that `{ mode }` does not exist because `useNonNullableContext(settings)` would be `undefined`.
 
 ## Next
 

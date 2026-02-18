@@ -1,6 +1,6 @@
 # createContext
 
-`createContext` is a function that creates a context provider — a function capable of transmitting a value that can be accessed through [`useContext`](../hooks/useContext.md) by all child components in the tree.
+`createContext` is a function that creates a context provider — a function capable of transmitting a value that can be accessed through [`useContext`](../hooks/useContext.md) or [`useNonNullableContext`](../hooks/useContext.md) by all child components in the tree.
 
 Here’s an example where application settings are passed as a context to all child components:
 
@@ -19,12 +19,12 @@ function App() {
 }
 
 const Title = renderRoot((content: string) => {
-    const { mode } = useContext(settings);
+    const { mode } = useNonNullableContext(settings);
     return /* HTML */ `<h1>(${mode}) ${content}</h1>`;
 });
 
 const Description = renderRoot((content: string) => {
-    const { mode } = useContext(settings);
+    const { mode } = useNonNullableContext(settings);
     return /* HTML */ `<p>(${mode}) ${content}</p>`;
 });
 ```

@@ -21,6 +21,7 @@ Here are the various exports provided by the **renderRoot** library and their ro
 -   [`renderRoot`](./render/renderRoot.md): takes a render function, wraps the returned HTML structure inside a `<render-root>` element, and adds an execution context for that element.
 -   [`createContext`](./create/createContext.md): creates a context that exposes a value to all child structures.
 -   [`useContext`](./hooks/useContext): retrieves the value of a context from within a render function.
+-   [`useNonNullableContext`](./hooks/useContext): is similar to `useContext` but it also guarantees that the value is not `null` or `undefined`.
 -   [`useLifeCycle`](./hooks/useLifeCycle.md): returns two functions — `connected`, which runs when the element is constructed, and `disconnected`, which runs when it’s removed from the DOM.
 -   [`useInnerRoot`](./hooks/useInnerRoot.md): creates a root context dependent on the current one, enabling the creation and addition of components dynamically.
 -   `useRoot`: retrieves the current root context (rarely used).
