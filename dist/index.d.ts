@@ -3,7 +3,10 @@
 export type RenderCallback<Arguments extends unknown[]> = (...args: Arguments) => string;
 export type NullaryRenderCallback = () => string;
 /** Function used to create a rendering root in string format */
-export declare function renderRoot<Arguments extends unknown[]>(callback: RenderCallback<Arguments>): (...args: Parameters<typeof callback>) => ReturnType<typeof callback>;
+export declare function renderRoot<Arguments extends unknown[]>(callback: RenderCallback<Arguments>): {
+	(...args: Parameters<typeof callback>): ReturnType<typeof callback>;
+	native: RenderCallback<Arguments>;
+};
 /** Function used to instantiate a context with a given value */
 export interface ContextProvider<Type> {
 	(value: Type, callback: NullaryRenderCallback): string;

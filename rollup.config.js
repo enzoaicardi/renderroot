@@ -35,6 +35,7 @@ export default formats.map(function (format) {
                             "connected",
                             "disconnected",
                             "provider",
+                            "native",
                         ],
                     },
                 },
